@@ -11,53 +11,96 @@ body {
     box-sizing: border-box;
 }
 
-.cerveza {
-    background-color: darkgrey;
-    width: 99,9%;
-    height: 98svh;
-    gap: 10px ;
-    padding: 5px;
-
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
     display: grid;
-    grid-template-columns: 4, 1fr;
-    grid-template-rows:4, 1fr;
-    grid-template-areas:
-        "indice indice indice indice"
-        "indice indice indice indice"
-        "variedades tienda nosotros contacto"
-        "texto texto foto foto"
-        "texto texto foto foto"
-        "texto texto foto foto"
-        "texto texto foto foto"
-        "texto texto foto foto"
-        "texto texto foto foto"
-    ;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4,auto);
+
+    grid-template-areas: "header header header"
+                         "contenido contenido sidebar" 
+                         "widget-1 widget-2 sidebar"
+                         "footer footer footer"  ;
 }
-.indice {
-    background-color: orange;
-    grid-area: indice;
+
+.contenedor > div,
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .footer {
+    background-color: darkgrey;
+    padding: 20px;
+    border-radius: 4px;
 }
-.variedades {
-    background-color: red;
-    grid-area: variedades;
+
+.contenedor .header {
+    background: #12203E;
+    color: #fff;
+    grid-area: header;
+    /*grid-column-start: 1;
+    grid-column-end: -1;*/
 }
-.tienda {
-    background-color: greenyellow;
-    grid-area:tienda;
+
+.contenedor .contenido {
+    grid-area: contenido;
+    /*grid-column: span 2;*/
 }
-.nosotros {
-    background-color: cyan;
-    grid-area: nosotros;
+.contenedor .sidebar {
+    grid-column: 3 / 4;
+    background: #faa43d;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    grid-area: sidebar;
+
+   /* grid-row: 2 / 4;*/
 }
-.contacto {
-    background-color: pink;
-    grid-area: contacto;
+
+.contenedor .widget-1, 
+.contenedor .widget-2 {
+    background: #55a8fd;
+    color: #fff;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.texto {
-    background-color: grey;
-    grid-area: texto;
+.contenedor .widget-1 {
+    grid-area: widget-1;
 }
-.foto {
-    background-color: yellow;
-    grid-area: foto;
+
+.contenedor .widget-2 {
+    grid-area: widget-2;
+}
+
+.contenedor .footer {
+    background: #12203e;
+    color: #fff;
+    grid-area: footer;
+    /*grid-column: span 3;*/
+}
+
+@media screen and (max-width: 768px){
+    .contenedor{
+        grid-template-areas: "header header header"
+                         "contenido contenido contenido"
+                         "sidebar sidebar sidebar" 
+                         "widget-1 widget-1 widget-2"
+                         "footer footer footer"  ;
+    }
+   /*.contenedor .contenido {
+        grid-column: 1 / -1;
+   }
+   .contenedor .sidebar {
+        grid-column: 1 / -1;
+   }
+    .contenedor .widget-1 {
+        grid-column: span 2 ;
+    }*/
 }
