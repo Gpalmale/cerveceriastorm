@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0s;
+
+}
+
+body {
+    color: rgb(6, 6, 7);
+    background-attachment: fixed;
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+.cerveza {
+    background-color: darkgrey;
+    width: 99,9%;
+    height: 98svh;
+    gap: 10px ;
+    padding: 5px;
+
+    display: grid;
+    grid-template-columns: 4, 1fr;
+    grid-template-rows:4, 1fr;
+    grid-template-areas:
+        "indice indice indice indice"
+        "indice indice indice indice"
+        "variedades tienda nosotros contacto"
+        "texto texto foto foto"
+        "texto texto foto foto"
+        "texto texto foto foto"
+        "texto texto foto foto"
+        "texto texto foto foto"
+        "texto texto foto foto"
+    ;
+}
+.indice {
+    background-color: orange;
+    grid-area: indice;
+}
+.variedades {
+    background-color: red;
+    grid-area: variedades;
+}
+.tienda {
+    background-color: greenyellow;
+    grid-area:tienda;
+}
+.nosotros {
+    background-color: cyan;
+    grid-area: nosotros;
+}
+.contacto {
+    background-color: pink;
+    grid-area: contacto;
+}
+.texto {
+    background-color: grey;
+    grid-area: texto;
+}
+.foto {
+    background-color: yellow;
+    grid-area: foto;
+}
